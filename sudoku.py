@@ -23,10 +23,11 @@ class Sudoku:
         """Nice terminal view with cells separated"""
         out = ""
         for j, row in enumerate(self.arr):
-            if j in [3,6]:
+            if j in [3, 6]:
                 out += "------+-------+------\n"
             fullrow = str(row)[1:-1].replace("0", " ")
-            out += fullrow[:5] + " |" + fullrow[5:11] + " |"+fullrow[11:] + "\n"
+            out += fullrow[:5] + " |" + \
+                fullrow[5:11] + " |"+fullrow[11:] + "\n"
         return out
 
     def row(self, j):
