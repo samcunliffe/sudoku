@@ -1,7 +1,7 @@
 """
 sudoku.py
 
-A wrapper class for a 9*9 numpy array. Makes the input checking a bit nicer 
+A wrapper class for a 9*9 numpy array. Makes the input checking a bit nicer
 and gives me the option to have fancy printing.
 """
 
@@ -11,7 +11,6 @@ import numpy as _np
 class Sudoku:
     """A valid sudoku puzzle stored as a 9*9 numpy array"""
 
-
     def __init__(self, arr):
         """Initialise the Sudoku object"""
         self.arr = _np.array(arr)
@@ -20,15 +19,13 @@ class Sudoku:
         if self.arr.dtype is not _np.dtype('int64'):
             raise TypeError('A Sudoku must be an array of integers')
 
-
     def __str__(self):
         # TODO make this better
         return str(self.arr)
 
-
     def row(self, j):
         """Get a row
-        
+
         Parameters:
             j (int): the row number
 
@@ -37,18 +34,16 @@ class Sudoku:
         """
         return self.arr[j]
 
-
     def column(self, i):
         """Get a column
-        
+
         Parameters:
             i (int): the column number
 
         Returns:
             the ith column
         """
-        return self.arr[:,i]
-
+        return self.arr[:, i]
 
     def cell(self, k):
         """Get a 3*3 cell
@@ -59,10 +54,9 @@ class Sudoku:
         Returns:
             the kth cell
         """
-        I = k%3  # the cell's column number (in the 3*3 supergrid)
-        J = k//3 # the cell's row number (in the 3*3 supergrid)
-        return self.arr[3*J:3*J+3, I*3:I*3+3]
-
+        iI = k % 3  # the cell's column number (in the 3*3 supergrid)
+        jJ = k//3  # the cell's row number (in the 3*3 supergrid)
+        return self.arr[3*jJ:3*jJ+3, iI*3:iI*3+3]
 
     def cell_containing(self, i, j):
         """Get a 3*3 cell containing the index (i, j)
@@ -76,7 +70,6 @@ class Sudoku:
         """
         k = (i//3)+3*(j//3)
         return self.cell(k)
-
 
     def possible(self, n, i, j):
         """Is the digit n possible in entry (i, j)
@@ -105,4 +98,3 @@ class Sudoku:
             return False
 
         return True
-

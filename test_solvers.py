@@ -1,13 +1,11 @@
 
 import unittest
-import numpy
 from sudoku import Sudoku
 from solvers import solve_computerphile
 from data import examples
 
 
 class TestSolvers(unittest.TestCase):
-
 
     def _test_computerphile(self, arr):
         """Test the computerphile algorithm for one puzzle"""
@@ -24,4 +22,3 @@ class TestSolvers(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
