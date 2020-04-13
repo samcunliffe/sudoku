@@ -105,3 +105,18 @@ class Sudoku:
             return False
 
         return True
+
+    def is_solved(self):
+        """Check if this sudoku is solved
+
+        Returns:
+            True if solved.
+        """
+
+        ns = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+        cols = [(ns == set(self.column(i).tolist())) for i in range(9)]
+        rows = [(ns == set(self.row(i).tolist())) for i in range(9)]
+        cels = [(ns == set(self.cell(i).flatten().tolist())) for i in range(9)]
+
+        return all(cols+rows+cels)
