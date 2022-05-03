@@ -5,4 +5,4 @@ Watching a youtube video, I realise I've never actually written my own sudoku so
 Here's one with backtracking a la [computerphile](https://youtu.be/G_UYXzGuqvM). I did it test-driven. When I get inspired I can add more solvers.
 
 ![Python](https://github.com/samcunliffe/sudoku/workflows/Python%20application/badge.svg?branch=master)
-[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/samcunliffe/enigma/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/samcunliffe/sudoku/blob/main/LICENSE)
